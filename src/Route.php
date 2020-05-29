@@ -52,9 +52,9 @@ class Route
             throw new RouteClassStringMethodNotFoundException('Route controller class: `' . $className . '` does not have a `' . $method . '` method');
         }
 
-        return function ($params = null) use ($className, $method) {
+        return function ($params = null, $request = null) use ($className, $method) {
             $controller = new $className;
-            return $controller->$method($params);
+            return $controller->$method($params, $request);
         };
     }
 
