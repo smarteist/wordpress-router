@@ -35,7 +35,7 @@ class Router extends ParentRouter
         apply_filters('wordpress_router_configured', $router);
 
         // Listen for when we should check whether any defined routes match
-        add_action('init', [static::class, 'processRequest']);
+        add_action('wp_loaded', [static::class, 'processRequest']);
     }
 
 
