@@ -10,7 +10,7 @@
         "router"
     ],
     "homepage": "https://github.com/smarteist/wordpress-router",
-    "license": "GPL-V2",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ali Hosseini",
