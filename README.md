@@ -1,7 +1,7 @@
 # Wordpress Router
 ![CI](https://travis-ci.org/smarteist/wordpress-router.svg?branch=master)
 
-A simple PHP router built on Symfony HTTP Foundation [AltoRouter](https://github.com/symfony/http-foundation) and [AltoRouter](https://github.com/dannyvankooten/AltoRouter) based on laravel API.
+A simple PHP router built on [SymfonyHttpFoundation](https://github.com/symfony/http-foundation) and [AltoRouter](https://github.com/dannyvankooten/AltoRouter) based on laravel API.
 This library is actually built to make routing easier on the [RootsSage](https://github.com/roots/sage) starter framework, however it can also be used in other systems
 
 ## Installation
@@ -148,3 +148,15 @@ Router::virtualPage('login-admin/', $loginPage);
 ```
 
 Now voila! ```http://yoursite.domain/login-admin``` loads virtual page template.
+
+
+Contributing
+----
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+License
+----
+
+MIT
