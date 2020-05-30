@@ -18,11 +18,16 @@ composer require hexbit/router
 
 Creating a route is done using the `map` function:
 
+
+In wordpress
 ```php
 // for wordpress projects
 use Hexbit\Router\WordPress\Router;
-// use this class for non wordpress systems
-use Hexbit\Router\Router as MainRouter;
+
+// first init router
+add_action("init", function () {
+     Router::init();
+});
 
 // Creates a route that matches the uri `/posts/list` both GET 
 // and POST requests. 
@@ -30,6 +35,20 @@ Router::map(['GET', 'POST'], 'posts/list', function () {
     return 'Hello World';
 });
 ```
+
+If you do not use the WordPress system, use the router class below, and [you can attempt to match your current request](#matching-routes-to-requests) in appropriate time.
+```php
+// use this class for non wordpress systems
+use Hexbit\Router\Router;
+
+// Creates a route that matches the uri `/posts/list` both GET 
+// and POST requests. 
+Router::map(['GET', 'POST'], 'posts/list', function () {
+    return 'Hello World';
+});
+```
+
+
 
 `map()` takes 3 parameters:
 
