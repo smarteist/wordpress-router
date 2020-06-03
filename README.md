@@ -143,7 +143,10 @@ Router::group('api/v1/', function ($group) {
 Once you have routes defined, you can attempt to match your current request against them using the `match()` function. `match()` accepts an instance of Symfony's `Request` and returns an instance of Symfony's `Symfony\Component\HttpFoundation\Response`:
 
 ```php
+// bool|Response
 $response = Router::match();
+
+// send response if route matches with current request
 if ($response && $response->getStatusCode() !== Response::HTTP_NOT_FOUND) {
             $response->send();
             exit();
@@ -151,8 +154,8 @@ if ($response && $response->getStatusCode() !== Response::HTTP_NOT_FOUND) {
 ```
 
 If you return an instance of `Response` from your closure it will be sent back un-touched. If however you return something else, it will be wrapped in an instance of `Response` with your return value as the content.
-##### on 404
-If no route matches the request, a boolean `false`.
+##### on not found
+If no route matches the request, a boolean `false` will be returned as match response.
 
 
 ### Wordpress Virtual Pages
