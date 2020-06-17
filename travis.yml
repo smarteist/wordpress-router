@@ -9,6 +9,9 @@ env:
   matrix:
   - COMPOSER_FLAGS="--prefer-lowest"
   - COMPOSER_FLAGS=""
+branches:
+  only:
+  - master
 before_script:
 - travis_retry composer self-update
 - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
